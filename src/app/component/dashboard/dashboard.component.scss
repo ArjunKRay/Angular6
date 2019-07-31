@@ -1,0 +1,140 @@
+.sidenavbar{
+    height: 500px;
+    width:400px;
+}
+.sidebar.icon{
+    margin-left: -130px;
+}
+
+.search{
+     border-radius: 2px;
+     outline: none;
+     padding: 11px 16px 11px 68px;
+     margin-left:10%;
+    
+    
+    width: 750px;
+    
+    border-radius: 2px;
+     font-size: 25px;
+     line-height: 20px;
+     margin-right: -5px;
+     margin-left: 10px;
+}
+
+.sidebar:hover{
+    background-color: lightgray;
+   
+}
+
+.sidebar:focus{
+    background-color: rgba(185, 168, 15, 0.507);
+   
+}
+
+mat-icon-button:focus{
+    background-color: rgba(185, 168, 15, 0.507);
+}
+mat-icon-button:hover{
+    background-color: lightgray;
+}
+
+.mat-divider{
+    color: lightgrey;
+}  
+
+.mat-icon-button{
+
+    
+        padding: 0;
+        min-width: 0;
+        width: 51px;
+        height: 40px;
+        flex-shrink: 0;
+        line-height: 40px;
+        border-radius: 50%;
+    
+
+    background-color:transparent;
+}
+
+ .content{
+     margin-left: 150px;
+ }
+
+.sidebar{
+    width: 250px;
+    height: 50px;
+     border-bottom-right-radius: 70px;
+     border-top-right-radius: 70px;
+     border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    background-color:transparent;
+}
+
+.text{
+    margin-left: 20px;
+}
+.trash{
+    width: 250px;
+    height: 50px;
+    background-color: rgba(185, 168, 15, 0.507);
+}
+
+.search-window{
+    border-radius: 20px;
+    margin-top: -10px;
+    height: 100%;
+    padding-bottom: 8px;
+}
+
+
+
+.green{
+    color: green;
+}
+
+.navigationlist{
+    background-color:transparent;
+}
+.mat{
+    float:right;
+    width: 150px;
+    z-index: 10;
+    margin-bottom: -72px;
+    border-radius: 20px; 
+}
+
+.appicons{
+    margin-top: 20%;
+}
+.matcard2{
+    margin-top: 40px;
+    margin-left:20px;
+    width:250px;
+}
+.button{
+    margin-left: 20px
+}
+
+.mat-raised-button
+{ width: 250px;
+    height: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color:transparent;
+   
+}
+
+.textarea1:empty:before{
+    content: attr(data-text);
+    opacity: 0.5;
+    font-size: 14px;
+    width:60%;
+    height:10%;
+    // @include margin-top(2px);
+}
+
+// .close{
+//     visibility: hidden;
+// }

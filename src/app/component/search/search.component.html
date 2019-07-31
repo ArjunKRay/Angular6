@@ -1,0 +1,27 @@
+
+<div fxLayout="row" fxFlex=100 class=side>
+        <div fxLayout="row" fxLayout="row wrap" fxFlex="80">
+          <div *ngFor="let note of noteslist">
+            <!-- <div *ngIf="noteone.search==true"> -->
+            <mat-card [ngStyle]="{'background-color':noteone.color}" class=matcard>
+              <form>
+                <div class="notearea">
+      
+                  <div>
+                    {{item.title}}
+                  </div>
+                  <br>
+                  <div>
+                    {{item.description}}
+                  </div>
+                </div>
+              
+                <div >
+                  <app-icons [noteInfo]="item"></app-icons>
+                </div>
+              </form>
+            </mat-card>
+           
+          </div>
+        </div>
+      </div>

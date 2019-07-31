@@ -1,0 +1,141 @@
+
+ <div>
+    <mat-toolbar>
+      <mat-toolbar-row>
+        <div fxLayout="row" fxFlex=20 fxLayoutAlign="start start">
+          <div fxFlex=30 fxlayoutAlign="start start">
+            <button mat-icon-button (click)="sidenav.toggle()" matTooltip="menu" fxShow="true">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+          <div fxLayout="row" fxFlex=45 >
+
+          <div style="margin-right: 15px"> <img src="../../../assets/keep.png" /></div>
+           <span style="color: black">FundooNotes</span>
+          </div>
+        </div>
+
+        <div fxLayout="row" fxFlex="50" fxLayoutAlign="space-between center">
+          <div fxFlex="100" fxLayout="row" fxLayout.xs="row" fxLayoutAlign="center center">
+            <mat-form-field appearance="outline" fxHide.xs [style.fontSize.px]="2" class="search">
+
+                <button mat-icon-button appearance="outline" (click)=onSearch()>
+                <mat-icon>search</mat-icon>
+              </button>
+              <input type="text" matInput placeholder="Search" [formControl]="search" class="search-window"
+                [style.fontSize.px]="16" style="width: 645px;height:20px" autocomplete="off" />
+            </mat-form-field>
+            <button mat-icon-button fxShow="true" style="margin-left: -60px">
+              <mat-icon>close</mat-icon>
+            </button>
+          </div>
+        </div>
+        <div fxLayout="row" fxFlex=50 fxLayoutAlign="space-between center">
+          <div fxLayout="row" fxFlex=70 style="margin-left: 20%">
+            <button mat-icon-button fxShow="true" matTooltip="refresh" style="margin-left: -5px">
+              <mat-icon> refresh</mat-icon>
+            </button>
+  
+            <button mat-icon-button fxShow="true" *ngIf="list" (click)="view()" matTooltip="List View" style="margin-left: 15px">
+              <mat-icon>view_agenda</mat-icon>
+            </button>
+  
+            <button mat-icon-button (click)="view()" *ngIf="grid" fxShow="true" matTooltip="Grid View" style="margin-left: 15px">
+              <mat-icon>view_module</mat-icon>
+            </button>
+  
+            <button mat-icon-button fxShow="true" matTooltip="settings" style="margin-left: 15px">
+              <mat-icon>settings</mat-icon>
+            </button>
+          </div>
+
+
+
+          <div>
+            <div fxLayout="row" fxFlex=50 style="margin-left: -55px">
+              <button mat-icon-button fxShow="true" matTooltip="apps" >
+                <mat-icon>apps</mat-icon>
+              </button>
+  
+              <button mat-icon-button fxShow="true"  (click)="account()" style="margin-left: 15px">
+              <mat-icon matTooltip="account" [matMenuTriggerFor]="more_option">account_circle</mat-icon>              </button>
+            
+            </div>
+          </div>
+
+
+        </div>
+      </mat-toolbar-row>
+    </mat-toolbar>
+  </div>
+  
+  
+  <div>
+    <mat-sidenav-container style="height:100vh;">
+      <mat-sidenav #sidenav style="width: 196px;" mode="side">
+        <mat-nav-list>
+          <div fxLayout="column" fxLayoutAlign="space-around start" fxLayoutGap="20px">
+            <div>
+              <button mat-button (click)="onNote()">
+                <mat-icon matTooltip="Create Notes">lightbulb_outline</mat-icon>
+
+                <mat-label class="labeldata"> Notes</mat-label>
+              </button>
+            </div>
+            <div>
+              <button mat-button (click)="reminder()">
+                <mat-icon matTooltip="Create Reminder">notifications_none</mat-icon> Reminder
+        
+              </button>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          <div>
+            <div>Labels</div>
+         <!----  <div *ngFor="let items of noteslist">
+              <button mat-button (click)=showLabel()>
+                  <mat-icon>label</mat-icon>
+                <p>{{item.labelName}}</p>
+              </button>
+            </div>--->
+          
+            <div>
+              <button mat-button (click)=openDialog()>
+                  <mat-icon>edit</mat-icon> 
+                  Edit Labels
+              </button>
+            </div>
+          </div>
+          <mat-divider></mat-divider>
+          
+          <div fxLayout="column" fxLayoutAlign="space-between start" fxLayoutGap="20px">
+
+
+            <div fxLayout="row" fxLayoutAlign="space-between start" fxLayoutGap="5px">
+              <button mat-button (click)="OnArchive()">
+                  <mat-icon>archive</mat-icon>
+                  Archive
+              </button>
+            </div>
+            <div>
+              <button mat-button (click)="OnTrash()">
+                  <mat-icon>delete</mat-icon>
+                   Trash
+              </button>
+            </div>
+          </div>
+        </mat-nav-list>
+      </mat-sidenav>
+      <mat-sidenav-content class="content">
+
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+  <div>
+      <mat-menu #more_option>
+          <button mat-icon mat-flat-button color="primary" (click)="OnLogout()">Logout </button>
+      </mat-menu>
+  </div>
+
+  

@@ -1,0 +1,41 @@
+
+<div fxLayout="column" fxLayoutAlign="center center">
+
+    <div fxLayout="row" fxLayouAlign="center center">
+      <!-- (click)=" OnOpen()" *ngIf="open===false" -->
+      <mat-card (click)=" OnOpen()" *ngIf="open===false">
+        <input matInput placeholder="create a note..." class="mat-card-input">
+        <div class="mat-card-note-icon" fxLayout="row" fxFlex="10" fxLayoutGap="5%">
+          <button mat-icon-button>
+            <mat-icon>check_box</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>brush</mat-icon>
+          </button>
+          <button mat-icon-button>
+            <mat-icon>crop_original</mat-icon>
+          </button>
+          <!-- <mdb-icon far icon="check-square"></mdb-icon> -->
+        </div>
+      </mat-card>
+    </div>
+    <div fxLayout="column" fxLayoutAlign="center center">
+      <!-- *ngIf="open===true" -->
+      <mat-card class="mat-card-below" *ngIf="open===true">
+        <div fxLayout="column" fxLayoutAlign="start">
+         
+            <input  class="mat-card-below-input" placeholder="Title" [formControl]="title" [(ngModel)]="note.title" > 
+            <input  class="mat-card-below-input"   placeholder="Description" [formControl]="description" [(ngModel)]="note.description" >
+        
+        </div>
+        <div fxLayout="row" fxLayoutAlign="start">
+          <app-icons></app-icons>
+          <!-- (click)="OnClose()" *ngIf="open===true" (click)="OnCreateNote()" -->
+          <button mat-icon-button  (click)="OnClose()" *ngIf="open===true">
+            close
+          </button>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <app-get-all></app-get-all>

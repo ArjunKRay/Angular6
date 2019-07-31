@@ -1,0 +1,45 @@
+.matcard{
+    margin-top: 40px;
+    border-radius: 20px;
+    margin-left: 20px;
+    width:205px;
+}
+
+.side{
+    margin-left: 160px;
+}
+
+.appicons{
+    margin-top:20px;
+    margin-left: -10%;
+    visibility: hidden;
+}
+
+mat-card:hover{
+    .appicons{
+    visibility: visible;
+    }
+    }
+.textarea1:empty:before{
+    content: attr(data-text);
+    opacity: 0.5;
+    font-size: 14px;
+    width:60%;
+    height:10%;
+}
+
+.matpad2
+{
+  // height: 110px;
+  height: max-content;
+  width: 200px;
+//   padding-left: 100px;
+}
+ 
+
+.matpad3
+{
+    height: max-content;
+    width: 547px;
+    // padding-left: 50px;
+}

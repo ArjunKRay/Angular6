@@ -1,0 +1,41 @@
+<div class="main">
+    <mat-card class="maincard" fxLayoutAlign="center center">
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <div style="align-content: center">
+                <h1>
+                    Fundoo Notes
+                </h1>
+            </div>
+            <div style="align-content: center">
+                <h2 style="color:cornflowerblue ">
+                    USER LOGIN
+                </h2>
+
+            </div>
+            <div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>E-mail</mat-label>
+                        <input matInput placeholder="Enter E-mailId" [(ngModel)]="login.email"  required>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password</mat-label>
+                        <input matInput placeholder="Enter Password" [(ngModel)]="login.password" required>
+
+                    </mat-form-field>
+                </div>
+                    <div class="submitButton">
+                        <button mat-button color=primary (click)="onLogin()">submit</button>
+                    </div>
+                    <button mat-button routerLink="/registration" class="button" >New User</button>
+                    <button mat-button routerLink="/forgotpassword" class="button">ForgotPassword</button>
+                </div>
+
+                
+           </div>
+    </mat-card>
+
+</div>

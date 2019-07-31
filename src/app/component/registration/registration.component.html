@@ -1,0 +1,54 @@
+<div class="main">
+    <mat-card class="maincard" fxLayoutAlign="center center">
+
+        <div fxLayout="column" fxLayoutAlign="space-around center">
+            <div style="align-content: center">
+                <h1>
+                    Fundoo Notes
+                </h1>
+            </div>
+            <div style="align-content: center">
+                <h2 style="color:black ">
+                    Registration
+                </h2>
+            </div>
+            <div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Name</mat-label>
+                        <input matInput placeholder="Enter Your Name" [formControl]="name" [(ngModel)]="register.name"required>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>E-mail</mat-label>
+                        <input matInput placeholder="Enter E-mailId" [formControl]="email"[(ngModel)]="register.emaild" required>
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>PhoneNumber</mat-label>
+                        <input matInput placeholder="Enter Mobile No." [formControl]="phoneNumber" [(ngModel)]="register.phoneNumber"required>
+
+                    </mat-form-field>
+                </div>
+
+                <div>
+                    <mat-form-field appearance="outline">
+                        <mat-label>password</mat-label>
+                        <input matInput placeholder="Enter Password" [(ngModel)]="register.password" required>
+
+                    </mat-form-field>
+                </div>
+
+                <div class="submitButton">
+
+                    <button mat-button color=primary (click)="onRegister()">submit</button>
+                </div>
+
+            </div>
+        </div>
+    </mat-card>
+
+</div>

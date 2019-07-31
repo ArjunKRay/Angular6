@@ -1,0 +1,55 @@
+<div fxLayout="row" fxLayoutAlign="start">
+    <button mat-icon-button>
+     <mat-icon>add_alert</mat-icon>
+   </button>
+   <button mat-icon-button >
+     <mat-icon>person_add</mat-icon>
+   </button>
+   <button mat-icon-button >
+     <mat-icon>color_lens</mat-icon>
+   </button>
+   <button mat-icon-button>
+     <mat-icon>image</mat-icon>
+   </button>
+   <button mat-icon-button (click)="onArchive()">
+     <mat-icon>archive</mat-icon>
+   </button>
+   <button mat-icon-button>
+     <mat-icon  [matMenuTriggerFor]="menu">more_vert</mat-icon>
+   </button>
+ </div>
+ <div>
+    <!-- <mat-menu #more_option>
+        <button mat-icon mat-flat-button  (click)="onTrash()">
+             Delete note
+        </button>
+        <br>
+        
+        <button mat-icon mat-flat-button  (click)="addLabel()">
+            Add label
+       </button>
+    </mat-menu> -->
+   <!----> <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item (click)="onTrash()" >
+
+          <span>Delete Note</span>
+        </button>
+        
+        <button mat-menu-item  [matMenuTriggerFor]="labelTrigger">
+
+          <span>Add Label</span>
+        </button>
+      </mat-menu>
+
+      <div>
+          <mat-menu #labelTrigger="matMenu">
+            <div>Label note</div>
+            <div *ngFor="let labels of labelsList">
+              <mat-checkbox (click)="addLabelToNote(labels)" class="addlabel">{{labels.labelName}}
+              </mat-checkbox>
+            </div>
+          </mat-menu>
+        </div>
+
+</div>
+

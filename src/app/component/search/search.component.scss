@@ -1,0 +1,30 @@
+.matcard{
+    margin-top: 40px;
+    margin-left: 20px;
+    border-radius: 20px;
+    width: 205px;
+}
+
+.side{
+    margin-left: 160px;
+}
+
+.appicons{
+    margin-top: 20px;
+    margin-left: -9%;
+    visibility: hidden;
+}
+
+mat-card:hover{
+    .appicons{
+    visibility: visible;
+    }
+    }
+
+.textarea1:empty:before{
+    content: attr(data-text);
+    opacity: 0.5;
+    font-size: 14px;
+    width:60%;
+    height:10%;
+    }
